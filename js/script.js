@@ -108,25 +108,14 @@ function initAnimations() {
  * Mobile navigation menu
  */
 function initMobileMenu() {
-    // Create mobile menu button if it doesn't exist
-    const header = document.querySelector('header .container');
-    if (!document.querySelector('.mobile-menu-toggle')) {
-        const menuToggle = document.createElement('button');
-        menuToggle.classList.add('mobile-menu-toggle');
-        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-        header.appendChild(menuToggle);
-        
-        const nav = document.querySelector('nav');
-        
-        menuToggle.addEventListener('click', function() {
+    // Используем существующую кнопку .nav-toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('nav');
+    
+    if (navToggle) {
+        navToggle.addEventListener('click', function() {
             nav.classList.toggle('active');
             this.classList.toggle('active');
-            
-            if (this.classList.contains('active')) {
-                this.innerHTML = '<i class="fas fa-times"></i>';
-            } else {
-                this.innerHTML = '<i class="fas fa-bars"></i>';
-            }
         });
     }
     
@@ -135,76 +124,11 @@ function initMobileMenu() {
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             document.querySelector('nav').classList.remove('active');
-            const menuToggle = document.querySelector('.mobile-menu-toggle');
-            if (menuToggle) {
-                menuToggle.classList.remove('active');
-                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            if (navToggle) {
+                navToggle.classList.remove('active');
             }
         });
     });
 }
 
-/**
- * Add styles for mobile menu
- */
-function addMobileMenuStyles() {
-    if (!document.querySelector('#mobile-menu-styles')) {
-        const style = document.createElement('style');
-        style.id = 'mobile-menu-styles';
-        style.innerHTML = `
-            @media (max-width: 768px) {
-                nav {
-                    display: none;
-                    position: absolute;
-                    top: 100%;
-                    left: 0;
-                    right: 0;
-                    background-color: var(--background-color);
-                    box-shadow: var(--shadow);
-                    z-index: 1000;
-                    padding: 20px;
-                }
-                
-                nav.active {
-                    display: block;
-                }
-                
-                nav ul {
-                    flex-direction: column;
-                    align-items: center;
-                }
-                
-                nav ul li {
-                    margin: 10px 0;
-                }
-                
-                .mobile-menu-toggle {
-                    display: block;
-                    background: none;
-                    border: none;
-                    font-size: 1.5rem;
-                    color: var(--text-color);
-                    cursor: pointer;
-                }
-                
-                .mobile-menu-toggle:focus {
-                    outline: none;
-                }
-            }
-            
-            @media (min-width: 769px) {
-                .mobile-menu-toggle {
-                    display: none;
-                }
-                
-                nav {
-                    display: block !important;
-                }
-            }
-        `;
-        document.head.appendChild(style);
-    }
-}
-
-// Add mobile menu styles when the document is ready
-document.addEventListener('DOMContentLoaded', addMobileMenuStyles); 
+// Удаляем функцию addMobileMenuStyles, так как эти стили уже добавлены в style.css 

@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Страница не найдена - CorgPhish</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
     <style>
         .error-container {
             display: flex;
@@ -124,16 +128,19 @@
     <header>
         <div class="container">
             <div class="logo">
-                <img src="images/corgphish_logo.png" alt="CorgPhish Logo">
+                <img src="img/logo.svg" alt="CorgPhish Logo">
                 <h1>CorgPhish</h1>
             </div>
+            <button class="nav-toggle" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <nav>
                 <ul>
                     <li><a href="index.html">Главная</a></li>
                     <li><a href="about.html">О проекте</a></li>
-                    <li><a href="features.html">Возможности</a></li>
                     <li><a href="download.html">Загрузить</a></li>
-                    <li><a href="docs.html">Документация</a></li>
                     <li><a href="contact.html">Контакты</a></li>
                 </ul>
             </nav>
@@ -142,7 +149,7 @@
 
     <section class="error-container">
         <div class="container">
-            <img src="images/corgi-confused.png" alt="Confused Corgi" class="corgi-image">
+            <img src="img/corgi-confused.svg" alt="Confused Corgi" class="corgi-image">
             <div class="error-code">404</div>
             <h1 class="error-message">Страница не найдена</h1>
             <p class="error-description">К сожалению, запрашиваемая вами страница не существует или была перемещена. Возможно, вы перешли по устаревшей ссылке или допустили опечатку в URL.</p>
@@ -169,11 +176,11 @@
 
     <footer>
         <div class="container">
-            <div class="footer-columns">
+            <div class="footer-grid">
                 <div class="footer-column">
                     <div class="footer-logo">
-                        <img src="images/corgphish_logo.png" alt="CorgPhish Logo">
-                        <h3>CorgPhish</h3>
+                        <img src="img/logo-white.svg" alt="CorgPhish Logo">
+                        <span>CorgPhish</span>
                     </div>
                     <p>Интеллектуальная система защиты от фишинга, использующая передовые технологии для обеспечения безопасности в интернете.</p>
                 </div>
@@ -209,16 +216,13 @@
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 CorgPhish. Все права защищены.</p>
-                <ul>
-                    <li><a href="privacy.html">Политика конфиденциальности</a></li>
-                    <li><a href="terms.html">Условия использования</a></li>
-                </ul>
+            <div class="copyright">
+                <p>&copy; 2023 CorgPhish. Все права защищены.</p>
             </div>
         </div>
     </footer>
 
+    <script src="js/main.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html> 
